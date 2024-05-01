@@ -1,19 +1,32 @@
-import React from 'react';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Outlet,
+} from "react-router-dom";
+import { Button, Container } from "@mui/material";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
+import Blogs from "./components/Blogs/Blogs";
+import Navbar from "./components/Navbar/Navbar";
+// import Home from './components/Home';
+// import About from './components/About';
+// import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="" element={<Navbar />}>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blogs" element={<Blogs />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
