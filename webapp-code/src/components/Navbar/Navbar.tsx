@@ -1,30 +1,65 @@
-// Navbar.tsx
 import React from "react";
 import { AppBar, Toolbar, Button, Typography } from "@mui/material";
 import { Link, Outlet } from "react-router-dom";
-// import logo from './logo.png'; // Your logo image
+// import logo from "./logo.png"; // Your logo image
+import "./Navbar.css"; // Import external CSS file
 
 const Navbar: React.FC = () => {
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" className="navbar">
         <Toolbar>
-          {/* <img src={logo} alt="Logo" style={{ marginRight: '10px', width: '50px', height: '50px' }} /> */}
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            My Website
+          {/* <img src={logo} alt="Logo" className="logo" /> */}
+          <Typography
+            variant="h6"
+            component={Link}
+            to="/"
+            className="navbar-brand"
+          >
+            Carepoint
           </Typography>
-          <Button color="inherit" component={Link} to="/">
-            Home
-          </Button>
-          <Button color="inherit" component={Link} to="/about">
-            About
-          </Button>
-          <Button color="inherit" component={Link} to="/blogs">
-            Blogs
-          </Button>
-          <Button color="inherit" component={Link} to="/contact">
-            Contact
-          </Button>
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Button
+                variant="text"
+                component={Link}
+                to="/"
+                className="nav-link"
+              >
+                Home
+              </Button>
+            </li>
+            <li className="nav-item">
+              <Button
+                variant="text"
+                component={Link}
+                to="/about"
+                className="nav-link"
+              >
+                About
+              </Button>
+            </li>
+            <li className="nav-item">
+              <Button
+                variant="text"
+                component={Link}
+                to="/blogs"
+                className="nav-link"
+              >
+                Blogs
+              </Button>
+            </li>
+            <li className="nav-item">
+              <Button
+                variant="text"
+                component={Link}
+                to="/contact"
+                className="nav-link"
+              >
+                Contact
+              </Button>
+            </li>
+          </ul>
         </Toolbar>
       </AppBar>
       <Outlet />

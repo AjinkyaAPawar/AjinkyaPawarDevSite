@@ -1,0 +1,39 @@
+/* Navbar.css */
+.navbar {
+  background-color: #030209 !important; /* Adjust background color as needed */
+}
+
+.logo {
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-brand:hover {
+  color: white;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none; 
+  margin-left: auto;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  color: white;
+  margin-left: 20px;
+  font-size: 1.0rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: white; 
+  background-color: #160428;
+}
