@@ -1,7 +1,7 @@
 import React from "react";
 import { AppBar, Toolbar, Button, Typography } from "@mui/material";
 import { Link, Outlet } from "react-router-dom";
-// import logo from "./logo.png"; // Your logo image
+import logo from "../../assets/AP_Symbol.jpeg"
 import "./Navbar.css"; // Import external CSS file
 
 const Navbar: React.FC = () => {
@@ -9,14 +9,14 @@ const Navbar: React.FC = () => {
     <>
       <AppBar position="static" className="navbar">
         <Toolbar>
-          {/* <img src={logo} alt="Logo" className="logo" /> */}
+          <img src={logo} alt="Logo" className="logo" />
           <Typography
             variant="h6"
             component={Link}
             to="/"
             className="navbar-brand"
           >
-            Carepoint
+            My Website
           </Typography>
           <ul className="navbar-nav">
             <li className="nav-item">

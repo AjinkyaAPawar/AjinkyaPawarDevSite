@@ -5,8 +5,10 @@
 
 .logo {
   margin-right: 10px;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
+  border-radius: 25px;
+  filter: brightness(150%);
 }
 
 .navbar-brand {
@@ -22,7 +24,7 @@
 
 .navbar-nav {
   display: flex;
-  list-style: none; 
+  list-style: none;
   margin-left: auto;
   align-items: center;
 }
@@ -30,10 +32,22 @@
 .navbar-nav .nav-link {
   color: white;
   margin-left: 20px;
-  font-size: 1.0rem;
+  font-size: 1rem;
+  position: relative;
 }
 
-.navbar-nav .nav-link:hover {
-  color: white; 
-  background-color: #160428;
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  top: 2px; /* Distance of the underline from the text */
+  align-items: center;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: transparent; /* Initial color of the underline */
+  transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.navbar-nav .nav-link:hover::after {
+  background-color: white; /* Change color of the underline on hover */
 }

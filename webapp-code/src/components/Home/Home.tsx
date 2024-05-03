@@ -1,12 +1,24 @@
-import React from "react";
-import { Card, CardContent, Typography, Grid, Box } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Grid,
+  Box,
+  Button,
+} from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import "./Home.css";
+import fullStackImage from "../../assets/fullStackImage.png";
+import AI_ML_Image from "../../assets/AI_ML.png";
+import CNS_Image from "../../assets/cns.png";
+import softwareDevelopmentImage from "../../assets/software-development.jpg";
 
 interface SlideProps {
   title: string;
   description: string;
   backgroundImage?: string;
+  alt: string;
 }
 
 const Slide: React.FC<SlideProps> = ({
@@ -20,7 +32,8 @@ const Slide: React.FC<SlideProps> = ({
         className="carousel-background"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <CardContent>
+        <Box className="overlay"></Box> {/* Adding overlay */}
+        <CardContent className="carousel-content">
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Typography
@@ -48,41 +61,70 @@ const Slide: React.FC<SlideProps> = ({
 };
 
 export default function Home() {
+  // Carousel
   const slides = [
     {
-      title: "Full Stack Developer",
-      description: "Knowledge in Java, React, Angular",
-      backgroundImage: "",
+      title: "Full Stack Development and Software Designing",
+      description:
+        "Proficient in crafting comprehensive software solutions as a Full Stack Developer, adept in Java, React, and Angular. Skilled in designing seamless user experiences and robust systems from front-end to back-end.",
+      backgroundImage: fullStackImage,
     },
     {
       title: "Data Science and Machine Learning",
       description:
-        "Including operating system, computer networks, and cryptography",
-      backgroundImage: "",
+        "Experienced in leveraging data science and machine learning techniques, with a strong foundation in operating systems, computer networks, and cryptography. Capable of extracting insights and building predictive models to drive informed decision-making.",
+      backgroundImage: AI_ML_Image,
     },
     {
       title: "Cryptography and Network Security",
       description:
-        "In-depth understanding of encryption, decryption, and secure communication protocols",
-      backgroundImage: "",
+        "Expertise in ensuring digital security through mastery of cryptography and network security principles. Proficient in encryption, decryption, and implementing secure communication protocols to safeguard digital assets and maintain confidentiality, integrity, and authenticity.",
+      backgroundImage: CNS_Image,
     },
   ];
+
+  // Introduction
 
   return (
     <>
       <Box>
-        <div className="carousel-container">
+        {/* Carousels */}
+        <Box className="carousel-container">
           <Carousel animation="fade">
             {slides.map((slide, index) => (
               <Slide
                 key={index}
                 title={slide.title}
                 description={slide.description}
-                backgroundImage={slide.backgroundImage}
+                backgroundImage={slide.backgroundImage} 
+                alt={`Carousel ${index + 1}`}
               />
             ))}
           </Carousel>
-        </div>
+        </Box>
+        {/* Introduction */}
+        <Grid className="introduction-container" container xs={12}>
+          {/* Intro Section */}
+          <Grid className="intro-section" item xs={8}>
+            <Typography variant="h1" className="intro-heading">
+              Hi, I'm Ajinkya
+            </Typography>
+            <Typography variant="body1" className="intro-description">
+              I'm a Full Stack Developer with expertise in Java, JavaScript,
+              React, Angular, and more. I excel in Data Structures and
+              Algorithms, and I'm proficient in C, C++, and Python. My knowledge
+              extends to Machine Learning, Data Science, Big Data, and areas
+              like Operating Systems, Cryptography, and Network Security.
+            </Typography>
+          </Grid>
+          <Grid item xs={4}>
+            <img
+              src={softwareDevelopmentImage}
+              alt="software developer"
+              className="intro-section-image"
+            />
+          </Grid>
+        </Grid>
       </Box>
     </>
   );
