@@ -1,12 +1,12 @@
 import React from "react";
-import { AppBar, Toolbar, Button, Typography } from "@mui/material";
+import { AppBar, Toolbar, Button, Typography, Box } from "@mui/material";
 import { Link, Outlet } from "react-router-dom";
-import logo from "../../assets/AP_Symbol.jpeg"
+import logo from "../../assets/AP_Symbol.jpeg";
 import "./Navbar.css"; // Import external CSS file
 
 const Navbar: React.FC = () => {
   return (
-    <>
+    <Box className="main">
       <AppBar position="static" className="navbar">
         <Toolbar>
           <img src={logo} alt="Logo" className="logo" />
@@ -62,8 +62,10 @@ const Navbar: React.FC = () => {
           </ul>
         </Toolbar>
       </AppBar>
-      <Outlet />
-    </>
+      <Box className="content">
+        <Outlet />
+      </Box>
+    </Box>
   );
 };
 

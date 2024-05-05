@@ -1,14 +1,69 @@
 import { Box, Grid, Typography } from "@mui/material";
+import {
+  FaJava,
+  FaReact,
+  FaAngular,
+  FaGit,
+  FaPython,
+  FaNode,
+  FaDocker,
+} from "react-icons/fa";
+import {
+  SiJavascript,
+  SiSpring,
+  SiMysql,
+  SiPostgresql,
+  SiElasticsearch,
+  SiMongodb,
+  SiRedis,
+} from "react-icons/si";
+import { TbBrandCpp } from "react-icons/tb";
 import "./About.css";
 
+interface TechStackProps {
+  technologies: { title: string; icon: React.ReactNode }[];
+}
+
+const TechStack: React.FC<TechStackProps> = ({ technologies }) => {
+  return (
+    <Box
+      className="tech-icons"
+      sx={{alignItems: "center", justifyContent: "center" }}
+    >
+      {technologies.map(({ title, icon }, index) => (
+        <Box className="tech-icon" key={index} title={title}>
+          {icon}
+        </Box>
+      ))}
+    </Box>
+  );
+};
+
 export default function About() {
+  const techStackSymbols = [
+    { title: "Java", icon: <FaJava /> },
+    { title: "JavaScript", icon: <SiJavascript /> },
+    { title: "C++", icon: <TbBrandCpp /> },
+    { title: "Python", icon: <FaPython /> },
+    { title: "Spring", icon: <SiSpring /> },
+    { title: "Node.js", icon: <FaNode /> },
+    { title: "React", icon: <FaReact /> },
+    { title: "Angular", icon: <FaAngular /> },
+    { title: "Elasticsearch", icon: <SiElasticsearch /> },
+    { title: "MySQL", icon: <SiMysql /> },
+    { title: "PostgreSQL", icon: <SiPostgresql /> },
+    { title: "MongoDB", icon: <SiMongodb /> },
+    { title: "Redis", icon: <SiRedis /> },
+    { title: "Git", icon: <FaGit /> },
+    { title: "Docker", icon: <FaDocker /> },
+  ];
   return (
     <>
-      <Grid>
-        {/* About Heading Section */}
-        <Grid className="about-section">
+      <Grid className="about-section">
+        {/* About - Description Section */}
+        <Grid className="about-section-desc">
           <Typography className="about-description">
-            <span style={{ fontWeight: "bold", fontSize: "1.2rem" }}>
+            <span style={{ fontWeight: "bold", fontSize: "1.4rem" }}>
               Welcome
             </span>
             {` to my corner of the web! I'm `}
@@ -46,6 +101,15 @@ export default function About() {
             possibilities of technology and innovation.
           </Typography>
         </Grid>
+        {/* About - Technology Section*/}
+        <Box className="about-section-tech">
+          <Grid className="about-tech-icons">
+            <Typography variant="h4" fontWeight={"bold"} pb={"1.2rem"}>
+              Professional Skillset
+            </Typography>
+            <TechStack technologies={techStackSymbols} />
+          </Grid>
+        </Box>
       </Grid>
     </>
   );

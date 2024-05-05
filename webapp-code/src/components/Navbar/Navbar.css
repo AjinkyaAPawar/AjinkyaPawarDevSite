@@ -1,6 +1,21 @@
 /* Navbar.css */
+
+/* .main {
+  background-color: #030209;
+} */
+
 .navbar {
-  background-color: #030209 !important; /* Adjust background color as needed */
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #030209 !important;
+  z-index: 1000;
+}
+
+.content {
+  background-color: #030209;
+  padding-top: 3.8rem !important;
 }
 
 .logo {
