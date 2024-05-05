@@ -75,3 +75,19 @@
   margin: 10px;
   border-radius: 100%;
 }
+
+.intro-tagline {
+  margin: 20px 0 !important;
+  font-size: 1.1rem !important;
+  color: #ff7f50; /* Orange color */
+}
+
+.intro-details-container {
+  margin-top: 40px !important;
+}
+
+.intro-details {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 20px !important;
+}

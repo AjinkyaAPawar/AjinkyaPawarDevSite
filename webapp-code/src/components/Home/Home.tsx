@@ -96,16 +96,16 @@ export default function Home() {
                 key={index}
                 title={slide.title}
                 description={slide.description}
-                backgroundImage={slide.backgroundImage} 
+                backgroundImage={slide.backgroundImage}
                 alt={`Carousel ${index + 1}`}
               />
             ))}
           </Carousel>
         </Box>
         {/* Introduction */}
-        <Grid className="introduction-container" container xs={12}>
+        <Grid className="introduction-container">
           {/* Intro Section */}
-          <Grid className="intro-section" item xs={8}>
+          <Grid className="intro-section" item>
             <Typography variant="h1" className="intro-heading">
               Hi, I'm Ajinkya
             </Typography>
@@ -116,13 +116,6 @@ export default function Home() {
               extends to Machine Learning, Data Science, Big Data, and areas
               like Operating Systems, Cryptography, and Network Security.
             </Typography>
-          </Grid>
-          <Grid item xs={4}>
-            <img
-              src={softwareDevelopmentImage}
-              alt="software developer"
-              className="intro-section-image"
-            />
           </Grid>
         </Grid>
       </Box>

@@ -1,0 +1,10 @@
+/* About Section CSS */
+.about-section{
+    padding: 1.0rem !important;
+}
+
+.about-description{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    font-size: large;
+    padding: 0.45rem;
+}
