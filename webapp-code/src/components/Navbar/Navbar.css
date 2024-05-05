@@ -1,7 +1,14 @@
 /* Navbar.css */
 
-/* .main {
-  background-color: #030209;
+/* .disable-zoom {
+  zoom: 1;
+}
+.main {
+  background-image: url("../../assets/global-bg.jpg");
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position: center top;
+  height: 100vh; 
 } */
 
 .navbar {
@@ -10,12 +17,13 @@
   left: 0;
   right: 0;
   background-color: #030209 !important;
+  border-bottom: 1px solid #220335;
   z-index: 1000;
 }
 
 .content {
-  background-color: #030209;
   padding-top: 3.8rem !important;
+  transform-origin: top center;
 }
 
 .logo {
