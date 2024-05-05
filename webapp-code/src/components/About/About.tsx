@@ -28,11 +28,12 @@ const TechStack: React.FC<TechStackProps> = ({ technologies }) => {
   return (
     <Box
       className="tech-icons"
-      sx={{alignItems: "center", justifyContent: "center" }}
+      sx={{ alignItems: "center", justifyContent: "center" }}
     >
       {technologies.map(({ title, icon }, index) => (
         <Box className="tech-icon" key={index} title={title}>
           {icon}
+          <span className="tech-name">{title}</span>
         </Box>
       ))}
     </Box>
