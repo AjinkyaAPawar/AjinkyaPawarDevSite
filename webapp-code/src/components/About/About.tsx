@@ -64,7 +64,7 @@ export default function About() {
         {/* About - Description Section */}
         <Grid className="about-section-desc">
           <Typography className="about-description">
-            <span style={{ fontWeight: "bold", fontSize: "1.4rem" }}>
+            <span style={{ fontWeight: "bold", fontSize: "1.8rem" }}>
               Welcome
             </span>
             {` to my corner of the web! I'm `}
@@ -97,7 +97,7 @@ export default function About() {
             efficiently. I thrive on challenges, constantly seeking new problems
             to solve and opportunities to learn and grow.
           </Typography>
-          <Typography className="about-description">
+          <Typography className="about-description" fontWeight={"bold"}>
             Join me on this exciting journey as we explore the endless
             possibilities of technology and innovation.
           </Typography>

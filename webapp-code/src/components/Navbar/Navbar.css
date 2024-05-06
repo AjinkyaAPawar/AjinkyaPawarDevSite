@@ -1,16 +1,5 @@
 /* Navbar.css */
 
-/* .disable-zoom {
-  zoom: 1;
-}
-.main {
-  background-image: url("../../assets/global-bg.jpg");
-  background-size: cover;
-  background-repeat: repeat-y;
-  background-position: center top;
-  height: 100vh; 
-} */
-
 .navbar {
   position: fixed !important;
   top: 0;
